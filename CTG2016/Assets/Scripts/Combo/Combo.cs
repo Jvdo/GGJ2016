@@ -102,4 +102,17 @@ public class Combo {
 	{
 		entries.Add(e);
 	}
+
+	public int GetHash()
+	{
+		int total = 0;
+
+		int numEntryTypes = Enum.GetNames(typeof(Entry)).Length;
+		for (int i = 0; i < entries.Count; ++i)
+		{
+			total += i * numEntryTypes + (int)entries[i];
+		}
+
+		return total;
+	}
 }

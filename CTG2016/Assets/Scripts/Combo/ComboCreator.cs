@@ -4,11 +4,13 @@ using System.Collections.Generic;
 
 public class ComboCreator : MonoBehaviour {
 
+	public ComboIndicator comboIndicator;
 
 	Combo combo;
 	// Use this for initialization
 	void Start () {
 		combo = new Combo();
+		comboIndicator.SetCombo(combo);
 	}
 	
 	// Update is called once per frame
