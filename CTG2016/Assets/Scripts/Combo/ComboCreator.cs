@@ -5,11 +5,10 @@ using System.Collections.Generic;
 public class ComboCreator : MonoBehaviour {
 
 
-	List<Combo.Entry> currentEntries = new List<Combo.Entry>();
-
+	Combo combo;
 	// Use this for initialization
 	void Start () {
-	
+		combo = new Combo();
 	}
 	
 	// Update is called once per frame
@@ -17,25 +16,24 @@ public class ComboCreator : MonoBehaviour {
 
 		if (Input.GetButtonDown("Up"))
 		{
-			currentEntries.Add(Combo.Entry.Up);
+			combo.AddEntry(Combo.Entry.Up);
 		}
 		if (Input.GetButtonDown("Down"))
 		{
-			currentEntries.Add(Combo.Entry.Down);
+			combo.AddEntry(Combo.Entry.Down);
 		}
 		if (Input.GetButtonDown("Left"))
 		{
-			currentEntries.Add(Combo.Entry.Left);
+			combo.AddEntry(Combo.Entry.Left);
 		}
 		if (Input.GetButtonDown("Right"))
 		{
-			currentEntries.Add(Combo.Entry.Right);
+			combo.AddEntry(Combo.Entry.Right);
 		}
 		if (Input.GetButtonDown("Submit"))
 		{
-			Combo c = new Combo(currentEntries);
-			c.Print();
-			currentEntries.Clear();
+			combo.Print();
+			combo.Reset();
 		}
 	}
 }

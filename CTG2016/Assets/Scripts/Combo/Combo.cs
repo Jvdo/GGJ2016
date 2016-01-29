@@ -21,7 +21,7 @@ public class Combo {
 
 	List<Entry> entries = new List<Entry>();
 
-	public Combo(int size = 4)
+	public Combo(int size = 0)
 	{
 		Generate(size);
 	}
@@ -91,5 +91,15 @@ public class Combo {
 	public List<Entry> GetEntries()
 	{
 		return entries;
+	}
+
+	public void Reset()
+	{
+		entries.Clear();
+	}
+
+	public void AddEntry(Entry e)
+	{
+		entries.Add(e);
 	}
 }
