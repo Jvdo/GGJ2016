@@ -38,20 +38,13 @@ public class Combo {
 			do
 			{
 				Entry entry = GetRandomEntry();
-				existingCount = 0;
+				existingCount = CountEntry(entry);
 
-				for (int j = 0; j < entries.Count; ++j)
-				{
-					if (entries[j] == entry)
-					{
-						++existingCount;
-					}
-				}
-				if (existingCount <= threshold)
+				if (existingCount < threshold)
 				{
 					entries.Add(entry);
 				}
-			} while (existingCount > threshold);
+			} while (existingCount >= threshold);
 		}
 	}
 
@@ -69,5 +62,19 @@ public class Combo {
 		}
 
 		Debug.Log(msg);
+	}
+
+	public int CountEntry(Entry e)
+	{
+		int count = 0;
+		for (int i = 0; i < entries.Count; ++i)
+		{
+			if (entries[i] == e)
+			{
+				++count;
+			}
+		}
+
+		return count;
 	}
 }

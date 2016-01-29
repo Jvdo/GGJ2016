@@ -12,7 +12,7 @@ public class ComboDatabase : MonoBehaviour {
 	void Start () {
 
 		// Debug code...
-		InitializeCombos(5);
+		InitializeCombos(50);
 		Print();
 	}
 	
