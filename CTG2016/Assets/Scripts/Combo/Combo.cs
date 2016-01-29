@@ -26,6 +26,11 @@ public class Combo {
 		Generate(size);
 	}
 
+	public Combo(List<Entry> entries)
+	{
+		this.entries = entries;
+	}
+
 	public void Generate(int size)
 	{
 		const int threshold = 2;
