@@ -53,7 +53,7 @@ public class Combo {
 		return entries == c.entries;
 	}
 
-	public void Print()
+	public String GetDebugText()
 	{
 		String msg = "Combo: ";
 		foreach(Entry e in entries)
@@ -61,7 +61,12 @@ public class Combo {
 			msg += e.ToString() + ", ";
 		}
 
-		Debug.Log(msg);
+		return msg;
+	}
+
+	public void Print()
+	{
+		Debug.Log(GetDebugText());
 	}
 
 	public int CountEntry(Entry e)

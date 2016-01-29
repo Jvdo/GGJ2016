@@ -12,7 +12,7 @@ public class ComboDatabase : MonoBehaviour {
 	void Start () {
 
 		// Debug code...
-		InitializeCombos(50);
+		InitializeCombos(5);
 		Print();
 	}
 	
@@ -52,5 +52,10 @@ public class ComboDatabase : MonoBehaviour {
 		{
 			c.Print();
 		}
+	}
+
+	public Combo GetCombo(int id)
+	{
+		return combos[id];
 	}
 }
