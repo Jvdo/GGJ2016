@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.43, y: 1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 434610}
@@ -117,6 +117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboId: 0
+  indicatorPrefab: {fileID: 11461482, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
+  offset: {x: -5, y: 0, z: 0}
+  distanceBetweenEntries: {x: 2.5, y: 0, z: 0}
   debugText: {fileID: 10234930}
 --- !u!1001 &100100000
 Prefab:

@@ -82,4 +82,9 @@ public class Combo {
 
 		return count;
 	}
+
+	public List<Entry> GetEntries()
+	{
+		return entries;
+	}
 }
