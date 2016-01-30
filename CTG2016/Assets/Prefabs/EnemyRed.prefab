@@ -12,6 +12,7 @@ GameObject:
   - 65: {fileID: 6574488}
   - 23: {fileID: 2326408}
   - 114: {fileID: 11480882}
+  - 114: {fileID: 11428990}
   m_Layer: 0
   m_Name: EnemyRed
   m_TagString: EnemyRed
@@ -76,6 +77,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11428990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d479663803b425ea74260f47d0fb65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  comboIndicatorPrefab: {fileID: 11400726, guid: 2a37d0112a2dd42589fbe4c43825f59b,
+    type: 2}
+  comboIndicatorOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &11480882
 MonoBehaviour:
   m_ObjectHideFlags: 1

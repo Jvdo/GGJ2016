@@ -11,16 +11,24 @@ public class EnemySpawner : MonoBehaviour {
 			this.delay = delay;
 			this.enemyType = enemyType;
 			this.count = count;
+			this.started = false;
 		}
 
-		float delay;
-		int enemyType;
-		int count;
+		public float delay;
+		public int enemyType;
+		public int count;
+		public bool started;
 	}
 
 	public TextAsset waveConfig;
+	public Enemy redEnemyPrefab;
+	public Enemy greenEnemyPrefab;
+	public Enemy blueEnemyPrefab;
 
 	List<Wave> waves = new List<Wave>();
+
+	float time = 0.0f;
+	int waveNum = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -98,6 +106,44 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		time += Time.deltaTime;
+
+		for (int i = 0; i < waves.Count; ++i)
+		{
+			Wave wave = waves[i];
+			if (!wave.started)
+			{
+				if (time >= wave.delay)
+				{
+					Spawn(wave);
+				}
+			}
+		}
+	}
+
+	void Spawn(Wave wave)
+	{
+		wave.started = true;
+
+		for (int i = 0; i < wave.count; ++i)
+		{
+			Enemy enemy = null;
+			switch(wave.enemyType)
+			{
+			case 0:
+				enemy = Instantiate(redEnemyPrefab) as Enemy;
+				break;
+			case 1:
+				enemy = Instantiate(greenEnemyPrefab) as Enemy;
+				break;
+			case 2:
+				enemy = Instantiate(blueEnemyPrefab) as Enemy;
+				break;
+			}
+
+			enemy.transform.position = transform.position + new Vector3(2f * waveNum, 0f, 0f);
+		}
+
+		waveNum++;
 	}
 }
