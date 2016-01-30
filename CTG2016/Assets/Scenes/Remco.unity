@@ -447,7 +447,8 @@ Prefab:
       propertyPath: misfire
       value: 
       objectReference: {fileID: 861852940}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11436832, guid: 0c47f3df8b7514957b77dcebbef2225e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0c47f3df8b7514957b77dcebbef2225e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &404950498
