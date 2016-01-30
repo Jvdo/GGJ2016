@@ -96,6 +96,7 @@ MonoBehaviour:
     type: 2}
   castIndicatorOffset: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
+  projectilePrefab: {fileID: 11403618, guid: 3513e652bf0f949939c60e1d00004bbb, type: 2}
   castTimeMin: 4
   castTimeMax: 6
   castDelayMin: 3

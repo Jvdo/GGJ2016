@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public int health;
+	public float maxHealth = 100;
+	public float health = 100;
 
 	public GameObject Red;
 	public GameObject Green;
@@ -12,9 +13,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		health = 100;
-	
+		health = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -24,8 +23,15 @@ public class PlayerBehaviour : MonoBehaviour {
 			
 			health -= 1;
 		}
+	}
 
+	public void OnHit(float damage)
+	{
+		health -= damage;
 
-	
+		if (health <= 0f)
+		{
+			print("TODO: game over");
+		}
 	}
 }

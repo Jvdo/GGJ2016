@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour {
 
 	public EnemySpawnPoint spawnPoint;
 
+	public EnemyProjectile projectilePrefab;
+
 	ComboIndicator comboIndicator;
 	EnemyCastIndicator castIndicator;
 
@@ -65,7 +67,8 @@ public class Enemy : MonoBehaviour {
 			castFactor -= 1.0f;
 			castSpeed = RandomCastSpeed();
 
-			// TODO: spawn unicorn bullet
+			EnemyProjectile proj = Instantiate(projectilePrefab) as EnemyProjectile;
+			proj.transform.position = transform.position;
 		}
 
 		if (castIndicator != null)
