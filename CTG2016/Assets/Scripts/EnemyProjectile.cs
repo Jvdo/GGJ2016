@@ -15,11 +15,17 @@ public class EnemyProjectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction = player.transform.position - transform.position;
+		Vector3 diff = player.transform.position - transform.position;
 
-		transform.position = transform.position + direction.normalized * velocity * Time.deltaTime;
+		Vector3 dir = diff.normalized * velocity * Time.deltaTime;
+		if (dir.sqrMagnitude > diff.sqrMagnitude)
+		{
+			dir = diff;
+		}
 
-		if (direction.magnitude <= 0.1f)
+		transform.position = transform.position + dir;
+
+		if (dir.magnitude <= 0.1f)
 		{
 			player.OnHit(damage);
 			Destroy(gameObject);

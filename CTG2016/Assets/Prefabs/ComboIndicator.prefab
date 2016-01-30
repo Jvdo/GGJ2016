@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comboId: 0
   indicatorPrefab: {fileID: 11483478, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
-  offset: {x: -5, y: 0, z: 0}
+  offset: {x: -2, y: 0, z: 0}
   distanceBetweenEntries: {x: 1.3, y: 0, z: 0}
   debugText: {fileID: 10234930}
 --- !u!1001 &100100000
@@ -136,6 +136,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: distanceBetweenEntries.x
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: offset.x
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
