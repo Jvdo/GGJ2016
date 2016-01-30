@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Combo\ComboIndicatorEntry.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyCastIndicator.cs" />
+     <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
      <Compile Include="Assets\Scripts\EnemySpawnPoint.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Hit.cs" />

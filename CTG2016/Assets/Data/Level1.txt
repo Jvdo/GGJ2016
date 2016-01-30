@@ -1,3 +1,2 @@
 # delay | enemy type | count
 1 red 1
-
