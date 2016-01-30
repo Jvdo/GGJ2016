@@ -30,6 +30,8 @@ public class EnemySpawner : MonoBehaviour {
 	List<Wave> waves = new List<Wave>();
 	EnemySpawnPoint[] spawnPoints;
 
+	WaveCompletedEffect waveCompletedEffect;
+
 	float time = 0.0f;
 	int waveNum = 0;
 	int stageNum = 0;
@@ -38,6 +40,9 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		waveCompletedEffect = FindObjectOfType<WaveCompletedEffect>();
+
 		InitializeSpawnPoints();
 		NextStage();
 	}
@@ -245,7 +250,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void CompleteStage()
 	{
-		print("stage completed!");
+		waveCompletedEffect.PlayEffect(stageNum);
 		stageCompleted = true;
 		timeForNextStage = 3.0f;
 	}
