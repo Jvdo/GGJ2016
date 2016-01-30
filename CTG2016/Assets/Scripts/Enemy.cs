@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour {
 
 	ComboIndicator comboIndicator;
 	EnemyCastIndicator castIndicator;
+	ParticleSpawner particleSpawner;
 
 	public float castTimeMin = 4.0f;
 	public float castTimeMax = 6.0f;
@@ -68,6 +69,8 @@ public class Enemy : MonoBehaviour {
 
 		hasBeenFiredAt = false;
 		currentState = State.Startup;
+
+		particleSpawner = FindObjectOfType<ParticleSpawner>();
 	}
 	
 	// Update is called once per frame
@@ -130,5 +133,18 @@ public class Enemy : MonoBehaviour {
 	public void StartDie()
 	{
 		currentState = State.Dying;
+
+		switch(id)
+		{
+		case 0:
+			// TODO
+			break;
+		case 1:
+			particleSpawner.SpawnBeesParticles(transform.position);
+			break;
+		case 2:
+			// TODO
+			break;
+		}
 	}
 }
