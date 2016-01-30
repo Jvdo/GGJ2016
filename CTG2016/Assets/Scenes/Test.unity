@@ -85,12 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &482212346 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400726, guid: 2a37d0112a2dd42589fbe4c43825f59b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1689107916}
-  m_Script: {fileID: 11500000, guid: eea66c928a76e4632a60b12e191cee2e, type: 3}
 --- !u!1 &563655719
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e17de500ed14ff9ad5a0c273832bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboIndicator: {fileID: 482212346}
+  comboIndicator: {fileID: 0}
 --- !u!114 &563655721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +780,10 @@ Prefab:
     - target: {fileID: 2386006, guid: 2a37d0112a2dd42589fbe4c43825f59b, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180954, guid: 2a37d0112a2dd42589fbe4c43825f59b, type: 2}
+      propertyPath: m_TagString
+      value: Player Combo Indicator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a37d0112a2dd42589fbe4c43825f59b, type: 2}
