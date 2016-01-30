@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour {
 		public bool started;
 	}
 
-	public TextAsset waveConfig;
+	public TextAsset[] waveConfigs;
 	public Enemy redEnemyPrefab;
 	public Enemy greenEnemyPrefab;
 	public Enemy blueEnemyPrefab;
@@ -32,15 +32,16 @@ public class EnemySpawner : MonoBehaviour {
 
 	float time = 0.0f;
 	int waveNum = 0;
-
+	int stageNum = 0;
 	// Use this for initialization
 	void Start () {
-		Parse();
 		InitializeSpawnPoints();
+		NextStage();
 	}
 
-	void Parse()
+	void Parse(TextAsset waveConfig)
 	{
+		waves.Clear();
 		string msg = waveConfig.text;
 
 		string[] lines = msg.Split('\n');
@@ -128,6 +129,11 @@ public class EnemySpawner : MonoBehaviour {
 				}
 			}
 		}
+
+		if (AllWavesStarted() && AllSpawnPointsEmpty())
+		{
+			NextStage();
+		}
 	}
 
 	void Spawn(Wave wave)
@@ -151,6 +157,7 @@ public class EnemySpawner : MonoBehaviour {
 			}
 
 			EnemySpawnPoint spawnPoint = GetRandomSpawnPoint();
+			spawnPoint.occupied = true;
 
 			enemy.transform.position = spawnPoint.transform.position;
 			enemy.spawnPoint = spawnPoint;
@@ -175,5 +182,45 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		return spawnPoint;
+	}
+
+	bool AllWavesStarted()
+	{
+		for (int i = 0; i < waves.Count; ++i)
+		{
+			if (!waves[i].started)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	bool AllSpawnPointsEmpty()
+	{
+		for (int i = 0; i < spawnPoints.Length; ++i)
+		{
+			if (spawnPoints[i].occupied)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	void NextStage()
+	{
+		if (stageNum < waveConfigs.Length)
+		{
+			print("Stage completed: " + stageNum);
+			Parse(waveConfigs[stageNum]);
+			++stageNum;
+		}
+		else
+		{
+			print("[TODO] Congratulations! You are true ritualist!");
+		}
 	}
 }
