@@ -6,7 +6,6 @@ public class RespawnBullet : MonoBehaviour
 	public GameObject green;
 	public GameObject red;
 	public GameObject blue;
-	public Vector3 spawnValues;
 
 	void Start ()
 	{
