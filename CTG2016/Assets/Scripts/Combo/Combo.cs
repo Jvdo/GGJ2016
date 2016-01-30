@@ -120,6 +120,11 @@ public class Combo {
 	{
 		int total = 0;
 
+		if (entries.Count == 0)
+		{
+			return -1;
+		}
+
 		int numEntryTypes = Enum.GetNames(typeof(Entry)).Length;
 		for (int i = 0; i < entries.Count; ++i)
 		{
