@@ -60,6 +60,8 @@
      <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\RespawnBullet.cs" />
+     <Compile Include="Assets\Scripts\Scores\Difficulty.cs" />
+     <Compile Include="Assets\Scripts\Scores\Score.cs" />
      <Compile Include="Assets\Scripts\SpawnScript.cs" />
      <Compile Include="Assets\Scripts\SpriteSheetNG.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
