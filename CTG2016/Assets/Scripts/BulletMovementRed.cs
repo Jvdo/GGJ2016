@@ -18,7 +18,7 @@ public class BulletMovementRed : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		//transform.LookAt (target);		
+		transform.LookAt (target);		
 		transform.Rotate (90, 0, 0);
 		transform.Translate(new Vector3(0, -speed, 0)); 
 	

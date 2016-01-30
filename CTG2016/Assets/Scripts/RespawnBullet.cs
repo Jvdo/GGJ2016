@@ -7,6 +7,8 @@ public class RespawnBullet : MonoBehaviour
 	public GameObject red;
 	public GameObject blue;
 
+	public GameObject Emitter;
+
 	void Start ()
 	{
 		
@@ -17,12 +19,16 @@ public class RespawnBullet : MonoBehaviour
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.G)) {
 			Instantiate (green);
+			green.transform.position = Emitter.transform.position;
+
 		}
 		if (Input.GetKeyDown (KeyCode.R)) {
 			Instantiate (red);
+			red.transform.position = Emitter.transform.position;
 		}
 		if (Input.GetKeyDown (KeyCode.B)) {
 			Instantiate (blue);
+			blue.transform.position = Emitter.transform.position;
 		}
 
 	}
@@ -46,4 +52,5 @@ public class RespawnBullet : MonoBehaviour
 			break;
 		}
 	}
+
 }
