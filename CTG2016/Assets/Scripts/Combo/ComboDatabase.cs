@@ -46,6 +46,18 @@ public class ComboDatabase : MonoBehaviour {
 		return false;
 	}
 
+	public int GetId(Combo c)
+	{
+		for (int i = 0; i < combos.Count; ++i)
+		{
+			if (combos[i].Equals(c))
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
 	public void Print()
 	{
 		foreach(Combo c in combos)

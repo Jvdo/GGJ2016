@@ -55,7 +55,20 @@ public class Combo {
 
 	public bool Equals(Combo c)
 	{
-		return entries == c.entries;
+		if (entries.Count != c.entries.Count)
+		{
+			return false;
+		}
+
+		for (int i = 0; i < entries.Count; ++i)
+		{
+			if (entries[i] != c.entries[i])
+			{
+				return false;
+			}
+		}
+
+		return true; 
 	}
 
 	public String GetDebugText()
