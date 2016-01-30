@@ -217,6 +217,8 @@ public class EnemySpawner : MonoBehaviour {
 			print("Stage completed: " + stageNum);
 			Parse(waveConfigs[stageNum]);
 			++stageNum;
+			waveNum = 0;
+			time = 0f;
 		}
 		else
 		{
