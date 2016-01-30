@@ -11,8 +11,8 @@ GameObject:
   - 33: {fileID: 3382470}
   - 23: {fileID: 2367162}
   - 54: {fileID: 5411164}
-  - 114: {fileID: 11486506}
   - 65: {fileID: 6563062}
+  - 114: {fileID: 11415032}
   m_Layer: 0
   m_Name: BulletGreen
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.05281939}
   m_Center: {x: 0, y: 0, z: -0.026409762}
---- !u!114 &11486506
+--- !u!114 &11415032
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 183694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1032f15e5a060e6418749ea1b146be89, type: 3}
+  m_Script: {fileID: 11500000, guid: 9394d044b8f9d3c48b4c681a29e620e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}

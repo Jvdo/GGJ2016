@@ -63,7 +63,7 @@ public class ComboCreator : MonoBehaviour {
 			Enemy enemy = GetClosestEnemyForCombo(combo);
 			if (enemy != null)
 			{
-				bulletSpawner.Fire(enemy.id);
+				bulletSpawner.Fire(enemy);
 			}
 			combo.Reset();
 		}
@@ -116,9 +116,10 @@ public class ComboCreator : MonoBehaviour {
 
 		for (int i = 0; i < enemies.Length; ++i)
 		{
-			if (enemies[i].id == comboId)
+			Enemy enemy = enemies[i];
+			if (!enemy.hasBeenFiredAt && enemy.id == comboId)
 			{
-				correctEnemies.Add(enemies[i]);
+				correctEnemies.Add(enemy);
 			}
 		}
 		return correctEnemies;

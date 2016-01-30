@@ -555,6 +555,21 @@ Prefab:
       propertyPath: fgRenderer
       value: 
       objectReference: {fileID: 527681814}
+    - target: {fileID: 11481474, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
+      propertyPath: red
+      value: 
+      objectReference: {fileID: 11477902, guid: 7f532152e9cf9eb4f90572ecc50605d7,
+        type: 2}
+    - target: {fileID: 11481474, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 11415032, guid: ba81be6735497244fabbf3c5b802a72b,
+        type: 2}
+    - target: {fileID: 11481474, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
+      propertyPath: blue
+      value: 
+      objectReference: {fileID: 11476374, guid: b7e6e6c31ca1834458521bf0b705fa38,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
   m_IsPrefabParent: 0
