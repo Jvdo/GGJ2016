@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Combo\ComboDatabase.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicator.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicatorEntry.cs" />
+     <Compile Include="Assets\Scripts\Effects\WaveCompletedEffect.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyCastIndicator.cs" />
      <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
