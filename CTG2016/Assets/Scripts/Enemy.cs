@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour {
 	public float castDelayMin = 3.0f;
 	public float castDelayMax = 8.0f;
 
+	public AudioSource Unicorn;
+
 	float castSpeed;
 	float castFactor;
 	float castDelay;
@@ -67,6 +69,7 @@ public class Enemy : MonoBehaviour {
 			castFactor -= 1.0f;
 			castSpeed = RandomCastSpeed();
 
+			Unicorn.Play ();
 			EnemyProjectile proj = Instantiate(projectilePrefab) as EnemyProjectile;
 			proj.transform.position = transform.position;
 		}
