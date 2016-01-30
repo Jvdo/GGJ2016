@@ -31,4 +31,9 @@ public class EnemyCastIndicator : MonoBehaviour {
 			fgRenderer.material.mainTextureScale = new Vector2(factor, 1.0f);
 		}
 	}
+
+	public void SetFactor(float f)
+	{
+		factor = Mathf.Clamp01(f);
+	}
 }
