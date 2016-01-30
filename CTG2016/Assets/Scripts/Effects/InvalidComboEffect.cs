@@ -3,6 +3,7 @@ using System.Collections;
 
 public class InvalidComboEffect : MonoBehaviour {
 
+	public AudioSource misfire;
 
 	public float frequency;
 	float strength = 0.0f;
@@ -33,6 +34,7 @@ public class InvalidComboEffect : MonoBehaviour {
 
 	public void PlayEffect()
 	{
+		misfire.Play ();
 		strength = 1.0f;
 	}
 }

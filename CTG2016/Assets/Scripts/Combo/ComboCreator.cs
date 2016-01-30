@@ -8,6 +8,8 @@ public class ComboCreator : MonoBehaviour {
 	RespawnBullet bulletSpawner;
 	ComboDatabase comboDb;
 
+	public AudioSource input;
+
 	Combo combo;
 
 	InvalidComboEffect invalidComboEffect;
@@ -48,18 +50,22 @@ public class ComboCreator : MonoBehaviour {
 		if (IsButtonAccepted("Up"))
 		{
 			combo.AddEntry(Combo.Entry.Up);
+			input.Play ();
 		}
 		if (IsButtonAccepted("Down"))
 		{
 			combo.AddEntry(Combo.Entry.Down);
+			input.Play ();
 		}
 		if (IsButtonAccepted("Left"))
 		{
 			combo.AddEntry(Combo.Entry.Left);
+			input.Play ();
 		}
 		if (IsButtonAccepted("Right"))
 		{
 			combo.AddEntry(Combo.Entry.Right);
+			input.Play ();
 		}
 
 		if (Input.GetButtonDown("Submit"))

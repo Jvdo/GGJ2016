@@ -7,6 +7,8 @@ public class RespawnBullet : MonoBehaviour
 	public BulletMovement red;
 	public BulletMovement blue;
 
+	public AudioSource sparkles;
+
 	public GameObject Emitter;
 
 	void Start ()
@@ -44,13 +46,16 @@ public class RespawnBullet : MonoBehaviour
 		switch(enemy.id)
 		{
 		case 0:
-			bullet = Instantiate(red) as BulletMovement; 
+			bullet = Instantiate (red) as BulletMovement;
+			sparkles.Play ();
 			break;
 		case 1:
 			bullet = Instantiate(green) as BulletMovement;
+			sparkles.Play ();
 			break;
 		case 2:
 			bullet = Instantiate(blue) as BulletMovement;
+			sparkles.Play ();
 			break;
 		default:
 			Debug.LogWarning("invalid selector in RespawnBullet.Fire!");
