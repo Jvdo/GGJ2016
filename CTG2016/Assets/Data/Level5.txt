@@ -1,3 +1,6 @@
 # delay | enemy type | count
 1 red 1
-
+5 red 1
+2 blue 1
+3 blue 1
+4 green 1
