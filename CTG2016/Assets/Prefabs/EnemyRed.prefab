@@ -92,7 +92,14 @@ MonoBehaviour:
   comboIndicatorPrefab: {fileID: 11400726, guid: 2a37d0112a2dd42589fbe4c43825f59b,
     type: 2}
   comboIndicatorOffset: {x: 0, y: 2, z: 0}
+  castIndicatorPrefab: {fileID: 11420956, guid: 97b8152791aba421eaa90dd368123819,
+    type: 2}
+  castIndicatorOffset: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 0}
+  castTimeMin: 4
+  castTimeMax: 6
+  castDelayMin: 3
+  castDelayMax: 8
 --- !u!114 &11480882
 MonoBehaviour:
   m_ObjectHideFlags: 1

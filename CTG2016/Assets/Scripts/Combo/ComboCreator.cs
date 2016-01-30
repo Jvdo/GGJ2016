@@ -34,25 +34,28 @@ public class ComboCreator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButtonDown("Up"))
+		if (combo.GetEntries().Count < 4)
 		{
-			combo.AddEntry(Combo.Entry.Up);
-		}
-		if (Input.GetButtonDown("Down"))
-		{
-			combo.AddEntry(Combo.Entry.Down);
-		}
-		if (Input.GetButtonDown("Left"))
-		{
-			combo.AddEntry(Combo.Entry.Left);
-		}
-		if (Input.GetButtonDown("Right"))
-		{
-			combo.AddEntry(Combo.Entry.Right);
+			if (Input.GetButtonDown("Up"))
+			{
+				combo.AddEntry(Combo.Entry.Up);
+			}
+			if (Input.GetButtonDown("Down"))
+			{
+				combo.AddEntry(Combo.Entry.Down);
+			}
+			if (Input.GetButtonDown("Left"))
+			{
+				combo.AddEntry(Combo.Entry.Left);
+			}
+			if (Input.GetButtonDown("Right"))
+			{
+				combo.AddEntry(Combo.Entry.Right);
+			}
 		}
 		if (Input.GetButtonDown("Submit"))
 		{
-			combo.Print();
+			//combo.Print();
 			Enemy enemy = GetClosestEnemyForCombo(combo);
 			if (enemy != null)
 			{
