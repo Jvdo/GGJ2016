@@ -58,9 +58,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116476}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: -0.00000016292068}
-  m_LocalPosition: {x: 0.02, y: -0.884, z: -0}
-  m_LocalScale: {x: 2.5437217, y: 2.5437217, z: 2.5437217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02, y: -0.58099985, z: 0}
+  m_LocalScale: {x: 0.38963962, y: 0.6122038, z: 0.6122038}
   m_Children: []
   m_Father: {fileID: 436238}
   m_RootOrder: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: -0.3
+  speed: -0.5
 --- !u!114 &11484120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9962752544c000340ad66dbb8e9fd371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 5
-  rows: 5
+  columns: 9
+  rows: 1
   framesPerSecond: 10
 --- !u!1001 &100100000
 Prefab:
@@ -205,7 +205,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: speed
-      value: -0.3
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]

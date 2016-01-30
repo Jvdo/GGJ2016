@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2325216}
   - 114: {fileID: 11447770}
   - 114: {fileID: 11406166}
-  - 65: {fileID: 6535846}
+  - 65: {fileID: 6501824}
   m_Layer: 0
   m_Name: EnemyBlue
   m_TagString: EnemyBlue
@@ -65,7 +65,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193146}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6535846
+--- !u!65 &6501824
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,8 +75,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 6.1232336e-17}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.12017764}
+  m_Center: {x: 0, y: 0, z: -0.0600888}
 --- !u!114 &11406166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,7 +110,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193146}
