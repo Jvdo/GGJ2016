@@ -21,9 +21,14 @@ public class Combo {
 
 	List<Entry> entries = new List<Entry>();
 
-	public Combo(int size = 4)
+	public Combo(int size = 0)
 	{
 		Generate(size);
+	}
+
+	public Combo(List<Entry> entries)
+	{
+		this.entries = entries;
 	}
 
 	public void Generate(int size)
@@ -86,5 +91,28 @@ public class Combo {
 	public List<Entry> GetEntries()
 	{
 		return entries;
+	}
+
+	public void Reset()
+	{
+		entries.Clear();
+	}
+
+	public void AddEntry(Entry e)
+	{
+		entries.Add(e);
+	}
+
+	public int GetHash()
+	{
+		int total = 0;
+
+		int numEntryTypes = Enum.GetNames(typeof(Entry)).Length;
+		for (int i = 0; i < entries.Count; ++i)
+		{
+			total += i * numEntryTypes + (int)entries[i];
+		}
+
+		return total;
 	}
 }

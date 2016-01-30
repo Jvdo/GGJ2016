@@ -14,6 +14,8 @@ public class ComboIndicator : MonoBehaviour {
 	// Debug functionality
 	public TextMesh debugText;
 
+	int lastHash = 0;
+
 	List<ComboIndicatorEntry> indicatorEntries = new List<ComboIndicatorEntry>();
 
 	// Use this for initialization
@@ -26,7 +28,34 @@ public class ComboIndicator : MonoBehaviour {
 		ComboDatabase comboDb = FindObjectOfType<ComboDatabase>();
 		combo = comboDb.GetCombo(id);
 
+		SetCombo(combo);
+
 		debugText.text = combo.GetDebugText();
+	}
+
+	public void SetCombo(Combo c)
+	{
+		combo = c;
+		UpdateGraphics();
+	}
+
+	void Update()
+	{
+		int currentHash = combo.GetHash();
+		if (currentHash != lastHash)
+		{
+			lastHash = currentHash;
+			UpdateGraphics();
+		}
+	}
+
+	void UpdateGraphics()
+	{
+		for (int i = 0; i < indicatorEntries.Count; ++i)
+		{
+			Destroy(indicatorEntries[i].gameObject);
+		}
+		indicatorEntries.Clear();
 
 		var entries = combo.GetEntries();
 		for(int i = 0; i < entries.Count; ++i)
@@ -37,10 +66,5 @@ public class ComboIndicator : MonoBehaviour {
 			indicatorEntries.Add(indicatorEntry);
 			indicatorEntry.transform.localPosition = offset + distanceBetweenEntries * (float)i;
 		}
-	}
-
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
