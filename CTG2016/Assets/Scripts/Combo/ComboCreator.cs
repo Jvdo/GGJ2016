@@ -30,29 +30,33 @@ public class ComboCreator : MonoBehaviour {
 		bulletSpawner = GetComponent<RespawnBullet>();
 		comboDb = FindObjectOfType<ComboDatabase>() as ComboDatabase;
 	}
+
+	bool IsButtonAccepted(string buttonName)
+	{
+		return combo.GetEntries().Count < 4 && Input.GetButtonDown(buttonName);
+	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (combo.GetEntries().Count < 4)
+
+		if (IsButtonAccepted("Up"))
 		{
-			if (Input.GetButtonDown("Up"))
-			{
-				combo.AddEntry(Combo.Entry.Up);
-			}
-			if (Input.GetButtonDown("Down"))
-			{
-				combo.AddEntry(Combo.Entry.Down);
-			}
-			if (Input.GetButtonDown("Left"))
-			{
-				combo.AddEntry(Combo.Entry.Left);
-			}
-			if (Input.GetButtonDown("Right"))
-			{
-				combo.AddEntry(Combo.Entry.Right);
-			}
+			combo.AddEntry(Combo.Entry.Up);
 		}
+		if (IsButtonAccepted("Down"))
+		{
+			combo.AddEntry(Combo.Entry.Down);
+		}
+		if (IsButtonAccepted("Left"))
+		{
+			combo.AddEntry(Combo.Entry.Left);
+		}
+		if (IsButtonAccepted("Right"))
+		{
+			combo.AddEntry(Combo.Entry.Right);
+		}
+
 		if (Input.GetButtonDown("Submit"))
 		{
 			//combo.Print();
