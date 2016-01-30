@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour {
 	float castFactor;
 	float castDelay;
 
+	public bool hasBeenFiredAt;
+
 	// Use this for initialization
 	void Start () {
 		comboIndicator = Instantiate(comboIndicatorPrefab) as ComboIndicator;
@@ -52,6 +54,8 @@ public class Enemy : MonoBehaviour {
 		castFactor = 0.0f;
 
 		castDelay = Random.Range(castDelayMin, castDelayMax);
+
+		hasBeenFiredAt = false;
 	}
 	
 	// Update is called once per frame

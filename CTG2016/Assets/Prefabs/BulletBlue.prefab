@@ -11,8 +11,8 @@ GameObject:
   - 33: {fileID: 3350318}
   - 23: {fileID: 2307196}
   - 54: {fileID: 5483622}
-  - 114: {fileID: 11427418}
   - 65: {fileID: 6564294}
+  - 114: {fileID: 11476374}
   m_Layer: 0
   m_Name: BulletBlue
   m_TagString: Untagged
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.16230427}
   m_Center: {x: 0, y: 0, z: -0.081157684}
---- !u!114 &11427418
+--- !u!114 &11476374
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 127552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e9195999854e684eaaca69a77949cac, type: 3}
+  m_Script: {fileID: 11500000, guid: 9394d044b8f9d3c48b4c681a29e620e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}

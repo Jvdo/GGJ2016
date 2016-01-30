@@ -3,9 +3,9 @@ using System.Collections;
 
 public class RespawnBullet : MonoBehaviour
 {
-	public GameObject green;
-	public GameObject red;
-	public GameObject blue;
+	public BulletMovement green;
+	public BulletMovement red;
+	public BulletMovement blue;
 
 	public GameObject Emitter;
 
@@ -16,7 +16,8 @@ public class RespawnBullet : MonoBehaviour
         
 	}
 
-	void Update(){
+	void Update() {
+		/*
 		if (Input.GetKeyDown (KeyCode.G)) {
 			Instantiate (green);
 			green.transform.position = Emitter.transform.position;
@@ -30,27 +31,33 @@ public class RespawnBullet : MonoBehaviour
 			Instantiate (blue);
 			blue.transform.position = Emitter.transform.position;
 		}
-
+		*/
 	}
 
-	public void Fire(int enemyId)
+	public void Fire(Enemy enemy)
 	{
-		Debug.Log("firing at: " + enemyId);
-		switch(enemyId)
+		Debug.Log("firing at: " + enemy.id);
+		enemy.hasBeenFiredAt = true;
+
+		BulletMovement bullet = null;
+
+		switch(enemy.id)
 		{
 		case 0:
-			Instantiate(red);
+			bullet = Instantiate(red) as BulletMovement; 
 			break;
 		case 1:
-			Instantiate(green);
+			bullet = Instantiate(green) as BulletMovement;
 			break;
 		case 2:
-			Instantiate(blue);
+			bullet = Instantiate(blue) as BulletMovement;
 			break;
 		default:
 			Debug.LogWarning("invalid selector in RespawnBullet.Fire!");
 			break;
 		}
+
+		bullet.SetTarget(enemy.transform);
 	}
 
 }
