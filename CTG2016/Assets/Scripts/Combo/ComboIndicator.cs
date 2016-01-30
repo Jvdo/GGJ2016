@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ComboIndicator : MonoBehaviour {
 
-	Combo combo;
+	Combo combo = null;
 	public int comboId = 0; // should enemy set this?
 
 	public ComboIndicatorEntry indicatorPrefab;
@@ -20,13 +20,17 @@ public class ComboIndicator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Initialize(comboId);
+		if (combo == null)
+		{
+			Initialize(comboId);
+		}
 	}
 
 	public void Initialize(int id)
 	{
+		comboId = id;
 		ComboDatabase comboDb = FindObjectOfType<ComboDatabase>();
-		combo = comboDb.GetCombo(id);
+		combo = comboDb.GetCombo(comboId);
 
 		SetCombo(combo);
 
@@ -61,10 +65,12 @@ public class ComboIndicator : MonoBehaviour {
 		for(int i = 0; i < entries.Count; ++i)
 		{
 			ComboIndicatorEntry indicatorEntry = Instantiate(indicatorPrefab) as ComboIndicatorEntry;
+			Vector3 initialScale = indicatorEntry.transform.localScale;
 			indicatorEntry.transform.SetParent(transform);
 			indicatorEntry.SetGraphics(entries[i]);
 			indicatorEntries.Add(indicatorEntry);
 			indicatorEntry.transform.localPosition = offset + distanceBetweenEntries * (float)i;
+			indicatorEntry.transform.localScale = initialScale;
 		}
 	}
 }
