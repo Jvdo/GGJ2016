@@ -30,6 +30,15 @@ public class Enemy : MonoBehaviour {
 
 	public bool hasBeenFiredAt;
 
+	enum State
+	{
+		Startup,
+		Casting,
+		Dying,
+	}
+
+	State currentState;
+
 	// Use this for initialization
 	void Start () {
 		comboIndicator = Instantiate(comboIndicatorPrefab) as ComboIndicator;
@@ -43,6 +52,8 @@ public class Enemy : MonoBehaviour {
 			castIndicator = Instantiate(castIndicatorPrefab) as EnemyCastIndicator;
 			castIndicator.transform.SetParent(transform);
 			castIndicator.transform.localPosition = castIndicatorOffset;
+
+			castIndicator.gameObject.SetActive(false);
 		}
 
 		if (spawnPoint != null)
@@ -56,31 +67,50 @@ public class Enemy : MonoBehaviour {
 		castDelay = Random.Range(castDelayMin, castDelayMax);
 
 		hasBeenFiredAt = false;
+		currentState = State.Startup;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		castDelay -= Time.deltaTime;
-
-		if (castDelay <= 0f)
+		switch(currentState)
 		{
-			castFactor += castSpeed * Time.deltaTime;
-		}
+		case State.Startup:
+			{
+				castIndicator.gameObject.SetActive(false);
+				castDelay -= Time.deltaTime;
 
-		if (castFactor >= 1.0f)
-		{
-			castFactor -= 1.0f;
-			castSpeed = RandomCastSpeed();
+				if (castDelay <= 0f)
+				{
+					currentState = State.Casting;
+				}
+			}
+			break;
+		case State.Casting:
+			{
+				castIndicator.gameObject.SetActive(true);
+				castFactor += castSpeed * Time.deltaTime;
 
-			Unicorn.Play ();
-			EnemyProjectile proj = Instantiate(projectilePrefab) as EnemyProjectile;
-			proj.transform.position = transform.position;
-		}
+				if (castFactor >= 1.0f)
+				{
+					castFactor -= 1.0f;
+					castSpeed = RandomCastSpeed();
 
-		if (castIndicator != null)
-		{
-			castIndicator.SetFactor(castFactor);
+					Unicorn.Play ();
+					EnemyProjectile proj = Instantiate(projectilePrefab) as EnemyProjectile;
+					proj.transform.position = transform.position;
+				}
+
+				if (castIndicator != null)
+				{
+					castIndicator.SetFactor(castFactor);
+				}
+			}
+			break;
+		case State.Dying:
+			// Don't do anything!?
+			castIndicator.gameObject.SetActive(false);
+			break;
 		}
 	}
 
@@ -95,5 +125,10 @@ public class Enemy : MonoBehaviour {
 	float RandomCastSpeed()
 	{
 		return 1.0f / Random.Range(castTimeMin, castTimeMax);
+	}
+
+	public void StartDie()
+	{
+		currentState = State.Dying;
 	}
 }
