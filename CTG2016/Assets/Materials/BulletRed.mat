@@ -135,6 +135,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diffuseMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 162a9e7c23847a742849dd41007719c7, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -208,6 +215,10 @@ Material:
         first:
           name: _Rotation
         second: 0
+      data:
+        first:
+          name: _alphaPower
+        second: 1
     m_Colors:
       data:
         first:
@@ -233,3 +244,7 @@ Material:
         first:
           name: _SkyTint
         second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      data:
+        first:
+          name: _diffuseColor
+        second: {r: 1, g: 1, b: 1, a: 1}
