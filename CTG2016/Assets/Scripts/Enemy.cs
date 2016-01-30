@@ -5,7 +5,9 @@ public class Enemy : MonoBehaviour {
 
 	public int id;
 	public ComboIndicator comboIndicatorPrefab;
-	public Vector3 comboIndicatorOffset = new Vector3(0f, 2f, 0f); 
+	public Vector3 comboIndicatorOffset = new Vector3(0f, 2f, 0f);
+
+	public EnemySpawnPoint spawnPoint;
 
 	ComboIndicator comboIndicator;
 
@@ -16,10 +18,23 @@ public class Enemy : MonoBehaviour {
 		comboIndicator.transform.localPosition = comboIndicatorOffset;
 
 		comboIndicator.Initialize(id);
+
+		if (spawnPoint != null)
+		{
+			spawnPoint.occupied = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void OnDestroy()
+	{
+		if (spawnPoint != null)
+		{
+			spawnPoint.occupied = false;
+		}
 	}
 }

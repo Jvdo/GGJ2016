@@ -25,7 +25,10 @@ public class EnemySpawner : MonoBehaviour {
 	public Enemy greenEnemyPrefab;
 	public Enemy blueEnemyPrefab;
 
+	public GameObject spawnPointsRoot;
+
 	List<Wave> waves = new List<Wave>();
+	EnemySpawnPoint[] spawnPoints;
 
 	float time = 0.0f;
 	int waveNum = 0;
@@ -33,6 +36,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Parse();
+		InitializeSpawnPoints();
 	}
 
 	void Parse()
@@ -104,6 +108,11 @@ public class EnemySpawner : MonoBehaviour {
 		}
 	}
 
+	void InitializeSpawnPoints()
+	{
+		spawnPoints = spawnPointsRoot.GetComponentsInChildren<EnemySpawnPoint>();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
@@ -141,9 +150,30 @@ public class EnemySpawner : MonoBehaviour {
 				break;
 			}
 
-			enemy.transform.position = transform.position + new Vector3(2f * waveNum, 0f, 0f);
+			EnemySpawnPoint spawnPoint = GetRandomSpawnPoint();
+
+			enemy.transform.position = spawnPoint.transform.position;
+			enemy.spawnPoint = spawnPoint;
 		}
 
 		waveNum++;
+	}
+
+	EnemySpawnPoint GetRandomSpawnPoint()
+	{
+		EnemySpawnPoint spawnPoint = null;
+
+		const int maxTries = 128;
+		for (int i = 0; i < maxTries; ++i)
+		{
+			spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+			if (!spawnPoint.occupied)
+			{
+				break;
+			}
+		}
+
+		return spawnPoint;
 	}
 }
