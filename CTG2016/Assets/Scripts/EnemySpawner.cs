@@ -33,6 +33,9 @@ public class EnemySpawner : MonoBehaviour {
 	float time = 0.0f;
 	int waveNum = 0;
 	int stageNum = 0;
+	bool stageCompleted = false;
+	float timeForNextStage = 0.0f;
+
 	// Use this for initialization
 	void Start () {
 		InitializeSpawnPoints();
@@ -116,23 +119,36 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		time += Time.deltaTime;
 
-		for (int i = 0; i < waves.Count; ++i)
+		if (stageCompleted)
 		{
-			Wave wave = waves[i];
-			if (!wave.started)
+			timeForNextStage -= Time.deltaTime;
+
+			if (timeForNextStage <= 0.0f)
 			{
-				if (time >= wave.delay)
-				{
-					Spawn(wave);
-				}
+				NextStage();
 			}
 		}
-
-		if (AllWavesStarted() && AllSpawnPointsEmpty())
+		else
 		{
-			NextStage();
+			time += Time.deltaTime;
+
+			for (int i = 0; i < waves.Count; ++i)
+			{
+				Wave wave = waves[i];
+				if (!wave.started)
+				{
+					if (time >= wave.delay)
+					{
+						Spawn(wave);
+					}
+				}
+			}
+
+			if (AllWavesStarted() && AllSpawnPointsEmpty())
+			{
+				CompleteStage();
+			}
 		}
 	}
 
@@ -212,17 +228,25 @@ public class EnemySpawner : MonoBehaviour {
 
 	void NextStage()
 	{
+		stageCompleted = false;
 		if (stageNum < waveConfigs.Length)
 		{
-			print("Stage completed: " + stageNum);
 			Parse(waveConfigs[stageNum]);
 			++stageNum;
 			waveNum = 0;
 			time = 0f;
+			print("Starting stage: " + stageNum);
 		}
 		else
 		{
 			print("[TODO] Congratulations! You are true ritualist!");
 		}
+	}
+
+	void CompleteStage()
+	{
+		print("stage completed!");
+		stageCompleted = true;
+		timeForNextStage = 3.0f;
 	}
 }
