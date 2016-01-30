@@ -1,12 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Data\Level10.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Data\Level4.txt">
     <Files>
-      <File FileName="Assets\Data\Level6.txt" Line="2" Column="1" />
-      <File FileName="Assets\Data\Level7.txt" Line="2" Column="1" />
-      <File FileName="Assets\Data\Level8.txt" Line="2" Column="1" />
-      <File FileName="Assets\Data\Level9.txt" Line="2" Column="1" />
-      <File FileName="Assets\Data\Level10.txt" Line="6" Column="10" />
+      <File FileName="Assets\Scripts\PlayerBehaviour.cs" Line="52" Column="12" />
+      <File FileName="Assets\Data\Level4.txt" Line="4" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
