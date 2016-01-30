@@ -10,7 +10,20 @@ public class ComboCreator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		combo = new Combo();
-		comboIndicator.SetCombo(combo);
+
+		if (comboIndicator == null)
+		{
+			var gameObject = GameObject.FindWithTag("Player Combo Indicator");
+			comboIndicator = gameObject.GetComponent<ComboIndicator>();
+		}
+		if (comboIndicator != null)
+		{
+			comboIndicator.SetCombo(combo);
+		}
+		else
+		{
+			Debug.LogWarning("Cannot find 'Player Combo Indicator'. Did you add a UI?");
+		}
 	}
 	
 	// Update is called once per frame
