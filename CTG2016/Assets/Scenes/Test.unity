@@ -132,7 +132,6 @@ MonoBehaviour:
   green: {fileID: 183694, guid: ba81be6735497244fabbf3c5b802a72b, type: 2}
   red: {fileID: 106302, guid: fa1d1034a098fa34c97b0fc544d5f7d0, type: 2}
   blue: {fileID: 127552, guid: b7e6e6c31ca1834458521bf0b705fa38, type: 2}
-  spawnValues: {x: 0, y: 0, z: 0}
 --- !u!114 &563655722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,3 +827,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1966097840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1966097842}
+  - 114: {fileID: 1966097841}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1966097841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966097840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34359de95c1784d2e8951a49038fd327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveConfig: {fileID: 4900000, guid: ec97aed7c0b654b97aafb07c00ce4cd1, type: 3}
+--- !u!4 &1966097842
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966097840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
