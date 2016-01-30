@@ -807,6 +807,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 757043871}
+  - 114: {fileID: 757043872}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -830,6 +831,19 @@ Transform:
   - {fileID: 639535732}
   m_Father: {fileID: 1833278001}
   m_RootOrder: 2
+--- !u!114 &757043872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 757043870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7000dfd5874a4b51a48027c16c71226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 5
+  maxStrenght: 0.18
 --- !u!1 &920135307
 GameObject:
   m_ObjectHideFlags: 0
