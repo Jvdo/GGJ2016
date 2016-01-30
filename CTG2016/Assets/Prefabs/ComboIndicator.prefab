@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboId: 0
-  indicatorPrefab: {fileID: 11461482, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
+  indicatorPrefab: {fileID: 11483478, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
   offset: {x: -5, y: 0, z: 0}
   distanceBetweenEntries: {x: 2.5, y: 0, z: 0}
   debugText: {fileID: 10234930}
@@ -127,7 +127,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: indicatorPrefab
+      value: 
+      objectReference: {fileID: 11483478, guid: 6cbefe7ff43484e4388c8c3e57274cb1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180954}
