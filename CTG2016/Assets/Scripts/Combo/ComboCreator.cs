@@ -9,6 +9,9 @@ public class ComboCreator : MonoBehaviour {
 	ComboDatabase comboDb;
 
 	Combo combo;
+
+	InvalidComboEffect invalidComboEffect;
+
 	// Use this for initialization
 	void Start () {
 		combo = new Combo();
@@ -28,7 +31,9 @@ public class ComboCreator : MonoBehaviour {
 		}
 
 		bulletSpawner = GetComponent<RespawnBullet>();
-		comboDb = FindObjectOfType<ComboDatabase>() as ComboDatabase;
+		comboDb = FindObjectOfType<ComboDatabase>();
+
+		invalidComboEffect = FindObjectOfType<InvalidComboEffect>();
 	}
 
 	bool IsButtonAccepted(string buttonName)
@@ -64,6 +69,10 @@ public class ComboCreator : MonoBehaviour {
 			if (enemy != null)
 			{
 				bulletSpawner.Fire(enemy);
+			}
+			else if (combo.GetEntries().Count > 0)
+			{
+				invalidComboEffect.PlayEffect();
 			}
 			combo.Reset();
 		}
