@@ -269,10 +269,10 @@ MonoBehaviour:
   id: 2
   comboIndicatorPrefab: {fileID: 11400726, guid: 2a37d0112a2dd42589fbe4c43825f59b,
     type: 2}
-  comboIndicatorOffset: {x: 0, y: 1, z: 0}
+  comboIndicatorOffset: {x: 0, y: 2.26, z: 0}
   castIndicatorPrefab: {fileID: 11420956, guid: 97b8152791aba421eaa90dd368123819,
     type: 2}
-  castIndicatorOffset: {x: 0, y: 0, z: 0}
+  castIndicatorOffset: {x: 0, y: 2, z: 0}
   spawnPoint: {fileID: 0}
   projectilePrefab: {fileID: 11403618, guid: 3513e652bf0f949939c60e1d00004bbb, type: 2}
   castTimeMin: 4
