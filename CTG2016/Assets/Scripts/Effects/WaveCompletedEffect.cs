@@ -40,9 +40,16 @@ public class WaveCompletedEffect : MonoBehaviour {
 		rectTransform.anchoredPosition3D = Vector3.Lerp(lastPosition, targetPosition, shakeTime / timeForNextShake);
 	}
 
-	public void PlayEffect(int stageNum)
+	public void PlayEffect(int stageNum, int maxStages)
 	{
-		uiText.text = string.Format("Stage {0} Completed!", stageNum);
+		if (stageNum == maxStages)
+		{
+			uiText.text = string.Format("Final Stage Completed!");
+		}
+		else
+		{
+			uiText.text = string.Format("Stage {0} Completed!", stageNum);
+		}
 		StartCoroutine(EffectRoutine());
 	}
 

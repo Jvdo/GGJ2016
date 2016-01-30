@@ -250,7 +250,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void CompleteStage()
 	{
-		waveCompletedEffect.PlayEffect(stageNum);
+		waveCompletedEffect.PlayEffect(stageNum, waveConfigs.Length);
 		stageCompleted = true;
 		timeForNextStage = 3.0f;
 	}
