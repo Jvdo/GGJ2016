@@ -1,124 +1,134 @@
-﻿// WATCH FULL EXPLANATION ON YOUTUBE-VIDEO: https://www.youtube.com/watch?v=3qBDTh9zWrQ 
-
-Shader "Our Toonshader Vol. 3" {
-   Properties {
-    _Color ("Diffuse Material Color", Color) = (1,1,1,1) 
-    _UnlitColor ("Unlit Color", Color) = (0.5,0.5,0.5,1)
-    _DiffuseThreshold ("Lighting Threshold", Range(-1.1,1)) = 0.1
-    _SpecColor ("Specular Material Color", Color) = (1,1,1,1) 
-    _Shininess ("Shininess", Range(0.5,1)) = 1	
-    _OutlineThickness ("Outline Thickness", Range(0,1)) = 0.1
-    _MainTex ("Main Texture", 2D) = "AK47" {}
-	    
+﻿Shader "Our Toonshader Vol. 3" {
+	Properties {
+		_Color ("Main Color", Color) = (.5,.5,.5,1)
+		_OutlineColor ("Outline Color", Color) = (0,0,0,1)
+		_Outline ("Outline width", Range (0.0, 0.03)) = .005
+		_MainTex ("Base (RGB)", 2D) = "white" { }
 	}
-   
-     SubShader {
-     Pass {
-	Tags{ "LightMode" = "ForwardBase" }
-        // pass for ambient light and first light source
-      
-      	CGPROGRAM
-      	
-      	#pragma vertex vert 
-      	//tells the cg to use a vertex-shader called vert
-      	#pragma fragment frag
-      	//tells the cg to use a fragment-shader called frag
-      	
-      	//== User defined ==//
-      	
-      	//TOON SHADING UNIFORMS
-      	uniform float4 _Color;
-      	uniform float4 _UnlitColor;
-      	uniform float _DiffuseThreshold;
-      	uniform float4 _SpecColor;
-      	uniform float _Shininess;
-      	uniform float _OutlineThickness;
-      
-      	
-      	//== UNITY defined ==//
-      	uniform float4 _LightColor0;
-      	uniform sampler2D _MainTex;
-      	uniform float4 _MainTex_ST;      	
-      	
-      	struct vertexInput {
-      		
-      	//TOON SHADING VAR
-      	float4 vertex : POSITION;
-      	float3 normal : NORMAL;
-      	float4 texcoord : TEXCOORD0;
-      		 
-      	};
-      	
-      	struct vertexOutput {
-           	
-           	float4 pos : SV_POSITION;
-           	float3 normalDir : TEXCOORD1;
-           	float4 lightDir : TEXCOORD2;
-           	float3 viewDir : TEXCOORD3;
-      		float2 uv : TEXCOORD0; 
-      	};
-      	
-      	vertexOutput vert(vertexInput input)
-      	{
-      		vertexOutput output;
-      		
-      		//normalDirection
-      		output.normalDir = normalize ( mul( float4( input.normal, 0.0 ), _World2Object).xyz );
-      	 	
-      		//World position
-      		float4 posWorld = mul(_Object2World, input.vertex);
-      		
-      		//view direction
-      		output.viewDir = normalize( _WorldSpaceCameraPos.xyz - posWorld.xyz ); //vector from object to the camera
-      		
-      		//light direction
-      		float3 fragmentToLightSource = ( _WorldSpaceCameraPos.xyz - posWorld.xyz);
-      		output.lightDir = float4(
-      			normalize( lerp(_WorldSpaceLightPos0.xyz , fragmentToLightSource, _WorldSpaceLightPos0.w) ),
-      			lerp(1.0 , 1.0/length(fragmentToLightSource), _WorldSpaceLightPos0.w)
-      		);
-      		
-      		//fragmentInput output;
-      		output.pos = mul( UNITY_MATRIX_MVP, input.vertex );  
-      		
-      		//UV-Map
-      		output.uv =input.texcoord;
-      		
-      		return output;
-      	  
-      	}
-      	
-      	float4 frag(vertexOutput input) : COLOR
-      	{
-
-	float nDotL = saturate(dot(input.normalDir, input.lightDir.xyz)); 
-			
-	//Diffuse threshold calculation
-	float diffuseCutoff = saturate( ( max(_DiffuseThreshold, nDotL) - _DiffuseThreshold ) *1000 );
-			
-	//Specular threshold calculation
-	float specularCutoff = saturate( max(_Shininess, dot(reflect(-input.lightDir.xyz, input.normalDir), input.viewDir))-_Shininess ) * 1000;
-			
-	//Calculate Outlines
-	float outlineStrength = saturate( (dot(input.normalDir, input.viewDir ) - _OutlineThickness) * 1000 );
-		
-			
-	float3 ambientLight = (1-diffuseCutoff) * _UnlitColor.xyz; //adds general ambient illumination
-	float3 diffuseReflection = (1-specularCutoff) * _Color.xyz * diffuseCutoff;
-	float3 specularReflection = _SpecColor.xyz * specularCutoff;
-		
-	float3 combinedLight = (ambientLight + diffuseReflection) * outlineStrength + specularReflection;
-			
-	return float4(combinedLight, 1.0); // + tex2D(_MainTex, input.uv); // DELETE LINE COMMENTS & ';' TO ENABLE TEXTURE
-		
-
-      	}
-      	
-      	ENDCG
-      
-      }
-
-   
-   }
-
+ 
+CGINCLUDE
+#include "UnityCG.cginc"
+ 
+struct appdata {
+	float4 vertex : POSITION;
+	float3 normal : NORMAL;
+};
+ 
+struct v2f {
+	float4 pos : POSITION;
+	float4 color : COLOR;
+};
+ 
+uniform float _Outline;
+uniform float4 _OutlineColor;
+ 
+v2f vert(appdata v) {
+	// just make a copy of incoming vertex data but scaled according to normal direction
+	v2f o;
+	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+ 
+	float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
+	float2 offset = TransformViewToProjection(norm.xy);
+ 
+	o.pos.xy += offset * o.pos.z * _Outline;
+	o.color = _OutlineColor;
+	return o;
+}
+ENDCG
+ 
+	SubShader {
+		Tags { "Queue" = "Transparent" }
+ 
+		// note that a vertex shader is specified here but its using the one above
+		Pass {
+			Name "OUTLINE"
+			Tags { "LightMode" = "Always" }
+			Cull Off
+			ZWrite Off
+			ZTest Always
+			ColorMask RGB // alpha not used
+ 
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
+ 
+CGPROGRAM
+#pragma vertex vert
+#pragma fragment frag
+ 
+half4 frag(v2f i) :COLOR {
+	return i.color;
+}
+ENDCG
+		}
+ 
+		Pass {
+			Name "BASE"
+			ZWrite On
+			ZTest LEqual
+			Blend SrcAlpha OneMinusSrcAlpha
+			Material {
+				Diffuse [_Color]
+				Ambient [_Color]
+			}
+			Lighting On
+			SetTexture [_MainTex] {
+				ConstantColor [_Color]
+				Combine texture * constant
+			}
+			SetTexture [_MainTex] {
+				Combine previous * primary DOUBLE
+			}
+		}
+	}
+ 
+	SubShader {
+		Tags { "Queue" = "Transparent" }
+ 
+		Pass {
+			Name "OUTLINE"
+			Tags { "LightMode" = "Always" }
+			Cull Front
+			ZWrite Off
+			ZTest Always
+			ColorMask RGB
+ 
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
+ 
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma exclude_renderers gles xbox360 ps3
+			ENDCG
+			SetTexture [_MainTex] { combine primary }
+		}
+ 
+		Pass {
+			Name "BASE"
+			ZWrite On
+			ZTest LEqual
+			Blend SrcAlpha OneMinusSrcAlpha
+			Material {
+				Diffuse [_Color]
+				Ambient [_Color]
+			}
+			Lighting On
+			SetTexture [_MainTex] {
+				ConstantColor [_Color]
+				Combine texture * constant
+			}
+			SetTexture [_MainTex] {
+				Combine previous * primary DOUBLE
+			}
+		}
+	}
+ 
+	Fallback "Diffuse"
 }
