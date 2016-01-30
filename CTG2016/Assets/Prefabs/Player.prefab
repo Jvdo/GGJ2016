@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &137660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468262}
+  m_Layer: 0
+  m_Name: Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &145406
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,8 +46,8 @@ GameObject:
   - 65: {fileID: 6582186}
   - 23: {fileID: 2344684}
   - 114: {fileID: 11416740}
-  - 114: {fileID: 11431772}
   - 114: {fileID: 11494604}
+  - 114: {fileID: 11481474}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -47,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.76, z: 2.15}
+  m_LocalPosition: {x: 0, y: 0.76, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 412512}
@@ -59,12 +74,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0, z: -9.918}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.01, y: 0, z: -10.01}
+  m_LocalScale: {x: 1.9363685, y: 1.9363687, z: 1.9363687}
   m_Children:
   - {fileID: 407832}
+  - {fileID: 468262}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &468262
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 412512}
+  m_RootOrder: 1
 --- !u!20 &2078198
 Camera:
   m_ObjectHideFlags: 1
@@ -173,7 +201,7 @@ MonoBehaviour:
   Red: {fileID: 0}
   Green: {fileID: 0}
   Blue: {fileID: 0}
---- !u!114 &11431772
+--- !u!114 &11481474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -187,7 +215,7 @@ MonoBehaviour:
   green: {fileID: 183694, guid: ba81be6735497244fabbf3c5b802a72b, type: 2}
   red: {fileID: 118596, guid: 7f532152e9cf9eb4f90572ecc50605d7, type: 2}
   blue: {fileID: 127552, guid: b7e6e6c31ca1834458521bf0b705fa38, type: 2}
-  spawnValues: {x: 0, y: 0, z: 0}
+  Emitter: {fileID: 137660}
 --- !u!114 &11494604
 MonoBehaviour:
   m_ObjectHideFlags: 1
