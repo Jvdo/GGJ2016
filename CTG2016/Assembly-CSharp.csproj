@@ -49,9 +49,11 @@
      <Compile Include="Assets\Scripts\BulletMovementGreen.cs" />
      <Compile Include="Assets\Scripts\BulletMovementRed.cs" />
      <Compile Include="Assets\Scripts\Combo\Combo.cs" />
+     <Compile Include="Assets\Scripts\Combo\ComboCreator.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboDatabase.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicator.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicatorEntry.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Hit.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\RespawnBullet.cs" />
@@ -141,6 +143,10 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{8618BF39-9A6B-45F5-61BD-B4C800249FC4}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
