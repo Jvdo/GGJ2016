@@ -71,6 +71,11 @@ public class ComboIndicator : MonoBehaviour {
 			indicatorEntries.Add(indicatorEntry);
 			indicatorEntry.transform.localPosition = offset + distanceBetweenEntries * (float)i;
 			indicatorEntry.transform.localScale = initialScale;
+
+			foreach (Transform trans in gameObject.GetComponentsInChildren<Transform>(true))
+			{
+				trans.gameObject.layer = gameObject.layer;
+			}
 		}
 	}
 }

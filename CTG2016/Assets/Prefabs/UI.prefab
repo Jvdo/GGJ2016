@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.7, z: 0}
+  m_LocalPosition: {x: 0, y: 2.6, z: 1}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 443578}
@@ -124,7 +124,7 @@ Camera:
   m_GameObject: {fileID: 150732}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -136,7 +136,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 5
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboId: 0
-  indicatorPrefab: {fileID: 11461482, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
+  indicatorPrefab: {fileID: 11483478, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
   offset: {x: -5, y: 0, z: 0}
   distanceBetweenEntries: {x: 2.5, y: 0, z: 0}
   debugText: {fileID: 10272544}
