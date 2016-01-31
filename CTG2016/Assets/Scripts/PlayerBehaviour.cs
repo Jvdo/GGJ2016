@@ -11,22 +11,19 @@ public class PlayerBehaviour : MonoBehaviour {
 	public GameObject Blue;
 
 	public ScreenShake screenShake;
+	GameOverEffect gameOverEffect;
 
 	// Use this for initialization
 	void Start () {
 		
 		health = maxHealth;
+		gameOverEffect = FindObjectOfType<GameOverEffect>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		UpdateHealthBar ();
-
-		if (Input.GetKeyDown (KeyCode.H)) {
-			
-			health -= 1;
-		}
 	}
 
 	public void OnHit(float damage)
@@ -35,7 +32,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		if (health <= 0f)
 		{
-			print("TODO: game over");
+			gameOverEffect.PlayEffect();
 		}
 
 		screenShake.AddScreenShake(0.6f);
