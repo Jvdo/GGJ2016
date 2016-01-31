@@ -350,7 +350,7 @@ MonoBehaviour:
   comboIndicatorOffset: {x: 0, y: 2.26, z: 0}
   castIndicatorPrefab: {fileID: 11420956, guid: 97b8152791aba421eaa90dd368123819,
     type: 2}
-  castIndicatorOffset: {x: 0, y: 2, z: 0}
+  castIndicatorOffset: {x: 0.118, y: 2.757, z: 0}
   spawnPoint: {fileID: 0}
   projectilePrefab: {fileID: 11403618, guid: 3513e652bf0f949939c60e1d00004bbb, type: 2}
   castTimeMin: 4
@@ -429,6 +429,14 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c82c95e10c909cc4585e05f27eb9c19c, type: 3}
+    - target: {fileID: 0}
+      propertyPath: castIndicatorOffset.x
+      value: 0.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: castIndicatorOffset.y
+      value: 2.757
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172214}
