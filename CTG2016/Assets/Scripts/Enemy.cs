@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
 	EnemyCastIndicator castIndicator;
 	ParticleSpawner particleSpawner;
 	ParticleSpawner fireSpawner;
+	EggEffect eggEffect;
 
 	public float castTimeMin = 4.0f;
 	public float castTimeMax = 6.0f;
@@ -72,6 +73,7 @@ public class Enemy : MonoBehaviour {
 		currentState = State.Startup;
 
 		particleSpawner = FindObjectOfType<ParticleSpawner>();
+		eggEffect = FindObjectOfType<EggEffect>();
 	}
 	
 	// Update is called once per frame
@@ -144,7 +146,7 @@ public class Enemy : MonoBehaviour {
 			particleSpawner.SpawnBeesParticles(transform.position);
 			break;
 		case 2:
-			// TODO
+			eggEffect.PlayEffect(transform.position);
 			break;
 		}
 	}
