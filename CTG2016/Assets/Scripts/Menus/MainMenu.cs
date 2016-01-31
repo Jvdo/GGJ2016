@@ -10,7 +10,18 @@ public class MainMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (WillyInput.IsJoystickButtonPressed(WillyInput.JoystickButton.A))
+		{
+			OnPlayButtonClicked();
+		}
+		else if (WillyInput.IsJoystickButtonPressed(WillyInput.JoystickButton.Y))
+		{
+			OnCreditsButtonClicked();
+		}
+		else if (WillyInput.IsJoystickButtonPressed(WillyInput.JoystickButton.B))
+		{
+			OnQuitButtonClicked();
+		}
 	}
 
 	public void OnPlayButtonClicked()
