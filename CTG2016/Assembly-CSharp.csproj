@@ -53,8 +53,10 @@
      <Compile Include="Assets\Scripts\Combo\ComboDatabase.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicator.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicatorEntry.cs" />
+     <Compile Include="Assets\Scripts\Effects\FadeInEffect.cs" />
      <Compile Include="Assets\Scripts\Effects\GameOverEffect.cs" />
      <Compile Include="Assets\Scripts\Effects\InvalidComboEffect.cs" />
+     <Compile Include="Assets\Scripts\Effects\SpashScreen.cs" />
      <Compile Include="Assets\Scripts\Effects\WaveCompletedEffect.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyCastIndicator.cs" />
@@ -62,6 +64,7 @@
      <Compile Include="Assets\Scripts\EnemySpawnPoint.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Hit.cs" />
+     <Compile Include="Assets\Scripts\LoadLevelDelayed.cs" />
      <Compile Include="Assets\Scripts\Menus\CreditsMenu.cs" />
      <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Menus\VictoryMenu.cs" />
