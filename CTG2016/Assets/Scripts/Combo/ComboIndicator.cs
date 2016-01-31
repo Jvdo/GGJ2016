@@ -11,9 +11,6 @@ public class ComboIndicator : MonoBehaviour {
 	public Vector3 offset = new Vector3(-5f, 0f, 0f);
 	public Vector3 distanceBetweenEntries = new Vector3(2.5f, 0f, 0f);
 
-	// Debug functionality
-	public TextMesh debugText;
-
 	int lastHash = 0;
 
 	List<ComboIndicatorEntry> indicatorEntries = new List<ComboIndicatorEntry>();
@@ -33,8 +30,6 @@ public class ComboIndicator : MonoBehaviour {
 		combo = comboDb.GetCombo(comboId);
 
 		SetCombo(combo);
-
-		debugText.text = combo.GetDebugText();
 	}
 
 	public void SetCombo(Combo c)
