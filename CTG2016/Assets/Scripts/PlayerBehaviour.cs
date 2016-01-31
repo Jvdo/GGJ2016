@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public GameObject Green;
 	public GameObject Blue;
 
+	public ScreenShake screenShake;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +37,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		{
 			print("TODO: game over");
 		}
+
+		screenShake.AddScreenShake(0.6f);
 	}
 
 	public float factor = 0.5f;
