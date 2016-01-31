@@ -10,7 +10,11 @@ public class Hit : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemy = GetComponent<Enemy>();
-		quad.GetComponent<Renderer> ().enabled = false;
+		if (quad)
+		{
+			quad.GetComponent<Renderer>().enabled = false;
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -27,8 +31,10 @@ public class Hit : MonoBehaviour {
 		hit.Play ();
 		Destroy(other.gameObject);
 		Invoke ("DestroyObject", 1f);
-		quad.GetComponent<Renderer> ().enabled = true;
-
+		if (quad)
+		{
+			quad.GetComponent<Renderer> ().enabled = true;
+		}
 	}
 
 	void DestroyObject(){		
