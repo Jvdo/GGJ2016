@@ -1500,7 +1500,6 @@ MonoBehaviour:
   indicatorPrefab: {fileID: 11483478, guid: 6cbefe7ff43484e4388c8c3e57274cb1, type: 2}
   offset: {x: -5, y: 0, z: 0}
   distanceBetweenEntries: {x: 2.5, y: 0, z: 0}
-  debugText: {fileID: 0}
 --- !u!1 &1221977909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,7 +1878,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cb73adc02f627be43a465ba396e0e4ab, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

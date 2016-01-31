@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Particles\ParticleSpawner.cs" />
      <Compile Include="Assets\Scripts\Particles\TempParticle.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\RandomAudioPlayer.cs" />
      <Compile Include="Assets\Scripts\RespawnBullet.cs" />
      <Compile Include="Assets\Scripts\Scores\Difficulty.cs" />
      <Compile Include="Assets\Scripts\Scores\Score.cs" />
