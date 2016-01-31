@@ -615,7 +615,7 @@ Transform:
   - {fileID: 861852938}
   - {fileID: 262669910}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1001 &404950498
 Prefab:
   m_ObjectHideFlags: 0
@@ -690,6 +690,10 @@ Prefab:
       propertyPath: screenShake
       value: 
       objectReference: {fileID: 2060205258}
+    - target: {fileID: 407832, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
   m_IsPrefabParent: 0
