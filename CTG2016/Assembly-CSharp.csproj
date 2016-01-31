@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\Hit.cs" />
      <Compile Include="Assets\Scripts\Menus\CreditsMenu.cs" />
      <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Particles\ParticleSpawner.cs" />
+     <Compile Include="Assets\Scripts\Particles\TempParticle.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\RespawnBullet.cs" />
      <Compile Include="Assets\Scripts\Scores\Difficulty.cs" />
