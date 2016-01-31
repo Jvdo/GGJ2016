@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
 
 	public void OnPlayButtonClicked()
 	{
-		
+		Application.LoadLevel (1);
 	}
 
 	public void OnCreditsButtonClicked()

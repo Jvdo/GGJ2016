@@ -12,6 +12,11 @@ public class ComboCreator : MonoBehaviour {
 
 	InvalidComboEffect invalidComboEffect;
 
+	public AudioSource input;
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		combo = new Combo();
