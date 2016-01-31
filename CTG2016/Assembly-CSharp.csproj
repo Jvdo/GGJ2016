@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ApplicationScript.cs" />
      <Compile Include="Assets\Scripts\BulletMovement.cs" />
+     <Compile Include="Assets\Scripts\Burning.cs" />
      <Compile Include="Assets\Scripts\Combo\Combo.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboCreator.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboDatabase.cs" />
