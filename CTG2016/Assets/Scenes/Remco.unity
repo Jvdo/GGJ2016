@@ -2510,7 +2510,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8308ab22d0a4a3492b340e78752123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 190cd3a02e5174fb2b96b3869933e818, type: 3}
+  - {fileID: 8300000, guid: 674db9d0729104219ab5f132ec9f1a46, type: 3}
+  - {fileID: 8300000, guid: 49c3f6c19f88a4235bafe5675894f511, type: 3}
+  - {fileID: 8300000, guid: 6f978e6346db9408382ecc051e9f9705, type: 3}
+  - {fileID: 8300000, guid: 17c59ef3abb07474e9389ab649f76c1f, type: 3}
+  - {fileID: 8300000, guid: ed771fd5186974ba0a5acca0ca02598d, type: 3}
+  - {fileID: 8300000, guid: c74e3786f782841808c673ee7d53b5cc, type: 3}
+  - {fileID: 8300000, guid: 1d6d0b0a8c8ed40929881b9c0586810a, type: 3}
+  - {fileID: 8300000, guid: 963392ab26b47430e921bce7b1f0537b, type: 3}
+  - {fileID: 8300000, guid: 167cb02c6d24541688fd8ec8528148b0, type: 3}
+  - {fileID: 8300000, guid: c276c27e0068c4252941c0cc622be94b, type: 3}
+  - {fileID: 8300000, guid: 48b174cefb663448bbb47558d49e0bcc, type: 3}
   randomIntervalMin: 10
   randomIntervalMax: 20
 --- !u!82 &1818708365
