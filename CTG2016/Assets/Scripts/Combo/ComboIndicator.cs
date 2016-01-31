@@ -41,6 +41,7 @@ public class ComboIndicator : MonoBehaviour {
 	{
 		combo = c;
 		UpdateGraphics();
+		lastHash = combo.GetHash();
 	}
 
 	void Update()
@@ -62,6 +63,7 @@ public class ComboIndicator : MonoBehaviour {
 		indicatorEntries.Clear();
 
 		var entries = combo.GetEntries();
+
 		for(int i = 0; i < entries.Count; ++i)
 		{
 			ComboIndicatorEntry indicatorEntry = Instantiate(indicatorPrefab) as ComboIndicatorEntry;
