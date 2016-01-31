@@ -14,7 +14,9 @@ public class ComboCreator : MonoBehaviour {
 
 	public AudioSource input;
 
-
+	bool inputEnabled = true;
+	public float totalTimeDisabled = 0.2f;
+	float timeInputDiabled = 0.0f;
 
 
 	// Use this for initialization
@@ -100,24 +102,35 @@ public class ComboCreator : MonoBehaviour {
 		}
 		#endif
 
-		if (IsButtonAccepted("Up"))
+		if (inputEnabled)
 		{
-			combo.AddEntry(Combo.Entry.Up);
+			if (IsButtonAccepted("Up"))
+			{
+				combo.AddEntry(Combo.Entry.Up);
+			}
+			if (IsButtonAccepted("Down"))
+			{
+				combo.AddEntry(Combo.Entry.Down);
+			}
+			if (IsButtonAccepted("Left"))
+			{
+				combo.AddEntry(Combo.Entry.Left);
+			}
+			if (IsButtonAccepted("Right"))
+			{
+				combo.AddEntry(Combo.Entry.Right);
+			}
 		}
-		if (IsButtonAccepted("Down"))
+		else
 		{
-			combo.AddEntry(Combo.Entry.Down);
+			timeInputDiabled += Time.deltaTime;
 		}
-		if (IsButtonAccepted("Left"))
+		if (combo.GetEntries().Count >= 4)
 		{
-			combo.AddEntry(Combo.Entry.Left);
-		}
-		if (IsButtonAccepted("Right"))
-		{
-			combo.AddEntry(Combo.Entry.Right);
+			inputEnabled = false;
 		}
 
-		if (combo.GetEntries().Count >= 4)
+		if (timeInputDiabled >= totalTimeDisabled)
 		{
 			//combo.Print();
 			Enemy enemy = GetClosestEnemyForCombo(combo);
@@ -130,6 +143,9 @@ public class ComboCreator : MonoBehaviour {
 				invalidComboEffect.PlayEffect();
 			}
 			combo.Reset();
+
+			timeInputDiabled = 0.0f;
+			inputEnabled = true;
 		}
 	}
 
