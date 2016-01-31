@@ -4,12 +4,13 @@ using System.Collections;
 public class Hit : MonoBehaviour {
 
 	public AudioSource hit;
-
+	public GameObject quad;
 	Enemy enemy;
 
 	// Use this for initialization
 	void Start () {
 		enemy = GetComponent<Enemy>();
+		quad.GetComponent<Renderer> ().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -26,6 +27,7 @@ public class Hit : MonoBehaviour {
 		hit.Play ();
 		Destroy(other.gameObject);
 		Invoke ("DestroyObject", 1f);
+		quad.GetComponent<Renderer> ().enabled = true;
 
 	}
 

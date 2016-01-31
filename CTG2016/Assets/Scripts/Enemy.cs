@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
 	ComboIndicator comboIndicator;
 	EnemyCastIndicator castIndicator;
 	ParticleSpawner particleSpawner;
+	ParticleSpawner fireSpawner;
 
 	public float castTimeMin = 4.0f;
 	public float castTimeMax = 6.0f;
