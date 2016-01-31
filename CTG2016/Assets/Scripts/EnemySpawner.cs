@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour {
 	EnemySpawnPoint[] spawnPoints;
 
 	WaveCompletedEffect waveCompletedEffect;
+	GameOverEffect gameOverEffect;
 
 	float time = 0.0f;
 	int waveNum = 0;
@@ -42,6 +43,7 @@ public class EnemySpawner : MonoBehaviour {
 	void Start () {
 
 		waveCompletedEffect = FindObjectOfType<WaveCompletedEffect>();
+		gameOverEffect = FindObjectOfType<GameOverEffect>();
 
 		InitializeSpawnPoints();
 		NextStage();
@@ -244,8 +246,7 @@ public class EnemySpawner : MonoBehaviour {
 		}
 		else
 		{
-			// TODO: do we need to delay this?
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+			gameOverEffect.PlayEffect("Victory");
 		}
 	}
 

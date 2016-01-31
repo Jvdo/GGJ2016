@@ -9,6 +9,8 @@ public class GameOverEffect : MonoBehaviour {
 	public float fadeOutTime = 1.0f;
 	float time = 0f;
 
+	string levelName;
+
 	// Use this for initialization
 	void Start () {
 		img = GetComponent<Image>();
@@ -28,13 +30,17 @@ public class GameOverEffect : MonoBehaviour {
 
 			if (time >= fadeOutTime)
 			{
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Defeat");
+				UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
 			}
 		}
 	}
 
-	public void PlayEffect()
+	public void PlayEffect(string levelToLoad)
 	{
-		img.enabled = true;
+		if (img.enabled == false)
+		{
+			img.enabled = true;
+			levelName = levelToLoad;
+		}
 	}
 }
