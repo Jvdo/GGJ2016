@@ -6,6 +6,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float maxHealth = 100;
 	public float health = 100;
 
+	public AudioSource wilhelm;
+
 	public GameObject Red;
 	public GameObject Green;
 	public GameObject Blue;
@@ -34,7 +36,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		{
 			gameOverEffect.PlayEffect("Defeat");
 		}
-
+		wilhelm.Play ();
 		screenShake.AddScreenShake(0.6f);
 	}
 
