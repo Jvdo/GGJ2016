@@ -686,6 +686,10 @@ Prefab:
       propertyPath: input
       value: 
       objectReference: {fileID: 1399497376}
+    - target: {fileID: 11416740, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
+      propertyPath: screenShake
+      value: 
+      objectReference: {fileID: 2060205258}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
   m_IsPrefabParent: 0
@@ -2624,6 +2628,20 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 145406, guid: 56abbd1f842714cbb9bf06b5e28decd2, type: 2}
   m_PrefabInternal: {fileID: 404950498}
+--- !u!114 &2060205258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060205257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a79d2275296458382e213c27c787a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTime: 0.5
+  intensity: 0.3
+  frequency: 14
 --- !u!114 &2060205263
 MonoBehaviour:
   m_ObjectHideFlags: 0
