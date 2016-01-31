@@ -10,7 +10,14 @@ public class VictoryMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (WillyInput.IsJoystickButtonPressed(WillyInput.JoystickButton.A))
+		{
+			OnReplayButtonClicked();
+		}
+		else if (WillyInput.IsJoystickButtonPressed(WillyInput.JoystickButton.B))
+		{
+			OnMainMenuButtonClicked();
+		}
 	}
 
 	public void OnReplayButtonClicked()
