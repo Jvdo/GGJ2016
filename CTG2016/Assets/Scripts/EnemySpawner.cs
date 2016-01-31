@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour {
 
+	public AudioSource next;
+
 	class Wave
 	{
 		public Wave(float delay, int enemyType, int count)
@@ -240,6 +242,7 @@ public class EnemySpawner : MonoBehaviour {
 		{
 			Parse(waveConfigs[stageNum]);
 			++stageNum;
+
 			waveNum = 0;
 			time = 0f;
 			print("Starting stage: " + stageNum);
@@ -255,5 +258,10 @@ public class EnemySpawner : MonoBehaviour {
 		waveCompletedEffect.PlayEffect(stageNum, waveConfigs.Length);
 		stageCompleted = true;
 		timeForNextStage = 3.0f;
+
+		if (stageNum != waveConfigs.Length) {
+			next.Play ();
+		}
+
 	}
 }
