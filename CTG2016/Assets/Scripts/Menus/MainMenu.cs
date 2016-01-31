@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class MainMenu : MonoBehaviour {
+
+	AudioSource audioSource;
+
+	public AudioClip buttonSfx;
 
 	// Use this for initialization
 	void Start () {
-	
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -26,16 +31,19 @@ public class MainMenu : MonoBehaviour {
 
 	public void OnPlayButtonClicked()
 	{
+		audioSource.PlayOneShot(buttonSfx);
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Remco");
 	}
 
 	public void OnCreditsButtonClicked()
 	{
+		audioSource.PlayOneShot(buttonSfx);
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
 	}
 
 	public void OnQuitButtonClicked()
 	{
+		audioSource.PlayOneShot(buttonSfx);
 		Application.Quit();
 	}
 }
