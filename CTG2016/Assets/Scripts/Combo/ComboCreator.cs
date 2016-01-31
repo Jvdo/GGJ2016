@@ -34,6 +34,13 @@ public class ComboCreator : MonoBehaviour {
 		comboDb = FindObjectOfType<ComboDatabase>();
 
 		invalidComboEffect = FindObjectOfType<InvalidComboEffect>();
+
+		string[] joystickNames = Input.GetJoystickNames();
+
+		foreach (string str in joystickNames)
+		{
+			print("Joystick:" + str);
+		}
 	}
 
 	bool IsButtonAccepted(string buttonName)
@@ -44,6 +51,49 @@ public class ComboCreator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		#if UNITY_STANDALONE_OSX || UNITY_EDITOR_OSX
+		if (Input.GetKeyDown("joystick button 19"))
+		{
+			combo.AddEntry(Combo.Entry.Up);
+			input.Play ();
+		}
+		if (Input.GetKeyDown("joystick button 16"))
+		{
+			combo.AddEntry(Combo.Entry.Down);
+			input.Play ();
+		}
+		if (Input.GetKeyDown("joystick button 18"))
+		{
+			combo.AddEntry(Combo.Entry.Left);
+			input.Play ();
+		}
+		if (Input.GetKeyDown("joystick button 17"))
+		{
+			combo.AddEntry(Combo.Entry.Right);
+			input.Play ();
+		}
+		#else
+		if (Input.GetKeyDown("joystick button 3"))
+		{
+			combo.AddEntry(Combo.Entry.Up);
+			input.Play ();
+		}
+		if (Input.GetKeyDown("joystick button 0"))
+		{
+			combo.AddEntry(Combo.Entry.Down);
+			input.Play ();
+		}
+		if (Input.GetKeyDown("joystick button 2"))
+		{
+			combo.AddEntry(Combo.Entry.Left);
+			input.Play ();
+		}
+		if (Input.GetKeyDown("joystick button 1"))
+		{
+			combo.AddEntry(Combo.Entry.Right);
+			input.Play ();
+		}
+		#endif
 
 		if (IsButtonAccepted("Up"))
 		{
