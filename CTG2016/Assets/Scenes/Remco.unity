@@ -247,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 186368432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.76, y: 4.838, z: 0}
-  m_LocalScale: {x: 0.22332144, y: 0.22332142, z: 0.22332142}
+  m_LocalScale: {x: 0.1982402, y: 0.1982402, z: 0.1982402}
   m_Children: []
   m_Father: {fileID: 861852938}
   m_RootOrder: 1
@@ -1339,7 +1339,7 @@ Transform:
   m_GameObject: {fileID: 1146023362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.52, y: 4.838, z: 0}
-  m_LocalScale: {x: 0.22332144, y: 0.22332142, z: 0.22332142}
+  m_LocalScale: {x: 0.1982402, y: 0.1982402, z: 0.1982402}
   m_Children: []
   m_Father: {fileID: 861852938}
   m_RootOrder: 2
@@ -1800,7 +1800,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1399497366}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a8c4fa3ba1491cc40921eae9a84216f1, type: 3}
@@ -1889,7 +1889,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2217,7 +2217,7 @@ Transform:
   m_GameObject: {fileID: 1613045075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.010999978, y: 4.838, z: 0}
-  m_LocalScale: {x: 0.22332144, y: 0.22332142, z: 0.22332142}
+  m_LocalScale: {x: 0.1982402, y: 0.1982402, z: 0.1982402}
   m_Children: []
   m_Father: {fileID: 861852938}
   m_RootOrder: 3
@@ -2396,7 +2396,7 @@ Transform:
   m_GameObject: {fileID: 1776367917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.77, y: 4.838, z: 0}
-  m_LocalScale: {x: 0.22332144, y: 0.22332142, z: 0.22332142}
+  m_LocalScale: {x: 0.1982402, y: 0.1982402, z: 0.1982402}
   m_Children: []
   m_Father: {fileID: 861852938}
   m_RootOrder: 0
