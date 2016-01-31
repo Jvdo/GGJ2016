@@ -32,7 +32,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		if (health <= 0f)
 		{
-			gameOverEffect.PlayEffect();
+			gameOverEffect.PlayEffect("Defeat");
 		}
 
 		screenShake.AddScreenShake(0.6f);
