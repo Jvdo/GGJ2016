@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
+public class VictoryMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,18 +13,13 @@ public class MainMenu : MonoBehaviour {
 	
 	}
 
-	public void OnPlayButtonClicked()
+	public void OnReplayButtonClicked()
 	{
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Remco");
 	}
 
-	public void OnCreditsButtonClicked()
+	public void OnMainMenuButtonClicked()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
-	}
-
-	public void OnQuitButtonClicked()
-	{
-		Application.Quit();
+		UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
 	}
 }

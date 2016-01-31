@@ -244,7 +244,8 @@ public class EnemySpawner : MonoBehaviour {
 		}
 		else
 		{
-			print("[TODO] Congratulations! You are true ritualist!");
+			// TODO: do we need to delay this?
+			UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
 		}
 	}
 
