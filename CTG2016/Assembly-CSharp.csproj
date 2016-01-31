@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\Combo\ComboDatabase.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicator.cs" />
      <Compile Include="Assets\Scripts\Combo\ComboIndicatorEntry.cs" />
+     <Compile Include="Assets\Scripts\Effects\EggEffect.cs" />
+     <Compile Include="Assets\Scripts\Effects\EggEffectInstance.cs" />
      <Compile Include="Assets\Scripts\Effects\FadeInEffect.cs" />
      <Compile Include="Assets\Scripts\Effects\GameOverEffect.cs" />
      <Compile Include="Assets\Scripts\Effects\InvalidComboEffect.cs" />
